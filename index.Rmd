@@ -3,6 +3,7 @@ title: "Yelp data analysis"
 ---
 
 # Screencast
+
 <iframe width="560" height="315" src="http://www.youtube.com/embed/9bZkp7q19f0?rel=0" frameborder="0" allowfullscreen></iframe>
 
 # Overview of the project scope
@@ -16,6 +17,7 @@ The data used in this project is part of the Yelp Dataset Challenge. The dataset
 # Stastistics analysis
 ## Analysis of customer flow(popularity) of a restaurant(Regression model)
 <img src="images/unnamed-chunk-8-1.jpg" style="width:75%">
+
 ## Conclusion
 After constructing the regression model, we find there is association between number of review and stars, category, location, price range and business hours of a restaurant. We can see from the plots above that the model fits well.
 
@@ -42,6 +44,7 @@ This histogram of positivity scores shows that 1-star reviews have lower positiv
 
 ## Negativity Density
 <img src="images/Negativity Density-1.jpg" style="width:75%">
+
 ### Conclusion
 The histogram of negative reviews looks much different than the positive one. The chart is heavily skewed right. We can see that 5-star reviews aren’t completely positive all the time, though they have lower negativity than the 1 star reviews.
 
