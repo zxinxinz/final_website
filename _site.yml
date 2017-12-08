@@ -1,0 +1,11 @@
+name: "Yay internet!"
+output_dir: "."
+navbar:
+  title: "Home"
+  right:
+    - text: "Shiny"
+      href: 
+    - icon: fa-github fa-lg
+      href: https://github.com/never1andddd/p8105_final_project
+output:
+  html_document

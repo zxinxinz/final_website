@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>Yelp data analysis</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-1.1/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-1.1/highlight.js"></script>
+<link href="site_libs/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs && document.readyState && document.readyState === "complete") {
+   window.setTimeout(function() {
+      hljs.initHighlighting();
+   }, 0);
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Home</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown-header">Shiny</li>
+<li>
+  <a href="https://github.com/never1andddd/p8105_final_project">
+    <span class="fa fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Yelp data analysis</h1>
+
+</div>
+
+
+<div id="screencast" class="section level1">
+<h1>Screencast</h1>
+<iframe width="560" height="315" src="http://www.youtube.com/embed/9bZkp7q19f0?rel=0" frameborder="0" allowfullscreen>
+</iframe>
+</div>
+<div id="overview-of-the-project-scope" class="section level1">
+<h1>Overview of the project scope</h1>
+<p>Nowadays, most customers will search for restaurants on Yelp to decide where to eat for the next meal. The review and rating of a restaurant is of great importance and will help a customer to decide whether this is a good place to eat. Our goal is to find what property makes a restaurant popular and what drives a customer to choose a certain restaurant. Therefore, we choose to explore data of Yelp since it has reviews from customers all over the world.</p>
+<p>In this website, you will see a map of restaurant showing the distribution of restaurants in different categories and some plots to reflect the relationship between customer flow(popularity) and category of a restaurant. Also there are some statistical analysis to help predict customer flow(popularity) of a restaurant. And We also include some analysis of the review of a restaurant. This might help us to decide what a customer mostly looks for when choosing a restaurant.</p>
+</div>
+<div id="data" class="section level1">
+<h1>Data</h1>
+<p>The data used in this project is part of the Yelp Dataset Challenge. The dataset consists of a set of JSON files that include business information, reviews, tips, user information and check-ins. In this project, we have focused on business and reviews.</p>
+</div>
+<div id="stastistics-analysis" class="section level1">
+<h1>Stastistics analysis</h1>
+<div id="analysis-of-customer-flowpopularity-of-a-restaurantregression-model" class="section level2">
+<h2>Analysis of customer flow(popularity) of a restaurant(Regression model)</h2>
+<p><img src="images/unnamed-chunk-8-1.jpg" style="width:75%"> ## Conclusion After constructing the regression model, we find there is association between number of review and stars, category, location, price range and business hours of a restaurant. We can see from the plots above that the model fits well.</p>
+</div>
+</div>
+<div id="visualizations" class="section level1">
+<h1>Visualizations</h1>
+<div id="bubble-plot-showing-the-distribution-of-ratings-across-different-categories" class="section level2">
+<h2>Bubble plot showing the distribution of ratings across different categories</h2>
+<p><img src="images/bubble%20plot-1.jpg" style="width:75%"></p>
+</div>
+<div id="bubble-plot-showing-the-distribution-of-ratings-across-different-cities" class="section level2">
+<h2>Bubble plot showing the distribution of ratings across different cities</h2>
+<p><img src="images/bubble plot-2.jpg" style="width:75%"></p>
+<div id="conclusion" class="section level3">
+<h3>Conclusion</h3>
+<p>We can see that most restaurants have main rating level are around 4.0 and 3.5. It seems that the mean rating levels among these categories and cities would be similar. ## Positivity Bar chart <img src="images/positive%20bar.jpg" style="width:75%"></p>
+</div>
+</div>
+<div id="positivity-density" class="section level2">
+<h2>Positivity Density</h2>
+<p><img src="images/Positivity%20Density-1.jpg" style="width:75%"></p>
+<div id="conclusion-1" class="section level3">
+<h3>Conclusion</h3>
+<p>This histogram of positivity scores shows that 1-star reviews have lower positivity compared to 4 or 5-star reviews.</p>
+</div>
+</div>
+<div id="negativity-bar-chart" class="section level2">
+<h2>Negativity Bar Chart</h2>
+<p><img src="images/negative%20bar.jpg" style="width:75%"></p>
+</div>
+<div id="negativity-density" class="section level2">
+<h2>Negativity Density</h2>
+<p><img src="images/Negativity%20Density-1.jpg" style="width:75%"> ### Conclusion The histogram of negative reviews looks much different than the positive one. The chart is heavily skewed right. We can see that 5-star reviews aren’t completely positive all the time, though they have lower negativity than the 1 star reviews.</p>
+</div>
+<div id="word-cloud" class="section level2">
+<h2>Word cloud</h2>
+<div id="star-reviews" class="section level3">
+<h3>5-star reviews</h3>
+<p><img src="images/wordcloud_output_of_positive_reviews.jpg" style="width:75%"></p>
+</div>
+<div id="star-reviews-1" class="section level3">
+<h3>1-star reviews</h3>
+<p><img src="images/wordcloud_output_of_negative_reviews.jpg" style="width:75%"></p>
+<div id="conclusion-2" class="section level4">
+<h4>Conclusion</h4>
+<p>The 5-star reviews contain many instances like “love”, “amazing”, “delicious”, “friendly”. On the contrast, the 1-star reviews use very little positive language, and instead using words like “minutes”, “horrible”, ”worst”, “frozen”, presumably after long and unfortunate waits at the establishment, and the food were not good either.</p>
+</div>
+</div>
+</div>
+<div id="customized-ring-plot" class="section level2">
+<h2>Customized ring plot</h2>
+</div>
+</div>
+<div id="section" class="section level1">
+<h1><img src="images/donut chart-1.jpg" style="width:75%"></h1>
+<div id="conclusion-3" class="section level3">
+<h3>Conclusion</h3>
+<p>From all the analysis above, we can conclude that Yelp reviews’ star ratings are significantly associated. Yelp reviews with 5-star are generally positive while Yelp reviews with 1-star are generally negative.</p>
+</div>
+</div>
+<div id="results" class="section level1">
+<h1>Results</h1>
+<p>Through linear regression we find that the passenger flows shown by number of review are affected by stars, cities, categories, prices and their working hours. For business owners, we may suggest that they don’t need to pay attention to the opening hours, although there’re some relationships between business hours and passenger flows. Instead, they should improve their customers exprience to receive feedbacks with higher stars.</p>
+<div id="usefulness-of-the-results" class="section level2">
+<h2>Usefulness of the results</h2>
+<p>Words that are frequently mentioned in reviews on Yelp might reflect what people most care when going to a restaurant. This is of great imporance as it helps restaurants to put more efforts on certain aspects and improve their business.</p>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
