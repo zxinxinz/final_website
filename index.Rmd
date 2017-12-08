@@ -27,7 +27,7 @@ After constructing the regression model, we find there is association between nu
 <img src="images/bubble plot-1.jpg" style="width:75%">
 
 ## Bubble plot showing the distribution of ratings across different cities
-<img src="images/bubble plot-2.jpg" style="width:75%">
+<img src="images/bubble plot-2-1.jpg" style="width:75%">
 
 
 ### Conclusion
@@ -66,7 +66,7 @@ The histogram of negative reviews looks much different than the positive one. Th
 The 5-star reviews contain many instances like “love”, “amazing”, “delicious”, “friendly”. On the contrast, the 1-star reviews use very little positive language, and instead using words like “minutes”, “horrible”, ”worst”, “frozen”, presumably after long and unfortunate waits at the establishment, and the food were not good either. 
 
 ## Customized ring plot 
-<img src="images/donut chart-1.jpg" style="width:75%">
+<img src="images/donut charts-1.jpg" style="width:75%">
 
 
 ### Conclusion
