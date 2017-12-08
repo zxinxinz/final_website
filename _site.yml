@@ -7,8 +7,9 @@ navbar:
       href: https://github.com/never1andddd/p8105_final_project
     - icon: fa-github fa-lg
       href: https://github.com/never1andddd/p8105_final_project
+
 output:
   html_document:
-  theme: readable
-  css: style.css
+   theme: united
+   css: style.css
   

@@ -15,13 +15,13 @@
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<link href="site_libs/bootstrap-3.3.5/css/united.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/highlightjs-1.1/default.css" rel="stylesheet" />
-<script src="site_libs/highlightjs-1.1/highlight.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 <link href="site_libs/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
 
 <style type="text/css">code{white-space: pre;}</style>
@@ -31,10 +31,12 @@
   }
 </style>
 <script type="text/javascript">
-if (window.hljs && document.readyState && document.readyState === "complete") {
-   window.setTimeout(function() {
-      hljs.initHighlighting();
-   }, 0);
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlightingOnLoad(); }, 0);
+  }
 }
 </script>
 
@@ -67,6 +69,7 @@ h6 {
 }
 </style>
 
+<link rel="stylesheet" href="style.css" type="text/css" />
 
 </head>
 
@@ -202,30 +205,32 @@ $(document).ready(function () {
 </div>
 
 
-<div id="screencast" class="section level1">
-<h1>Screencast</h1>
+<div id="screencast" class="section level3">
+<h3>Screencast</h3>
+<center>
 <iframe width="560" height="315" src="http://www.youtube.com/embed/9bZkp7q19f0?rel=0" frameborder="0" allowfullscreen>
 </iframe>
 </div>
-<div id="overview-of-the-project-scope" class="section level1">
-<h1>Overview of the project scope</h1>
+<div id="overview-of-the-project-scope" class="section level2">
+<h2>Overview of the project scope</h2>
 <p>Nowadays, most customers will search for restaurants on Yelp to decide where to eat for the next meal. The review and rating of a restaurant is of great importance and will help a customer to decide whether this is a good place to eat. Our goal is to find what property makes a restaurant popular and what drives a customer to choose a certain restaurant. Therefore, we choose to explore data of Yelp since it has reviews from customers all over the world.</p>
 <p>In this website, you will see a map of restaurant showing the distribution of restaurants in different categories and some plots to reflect the relationship between customer flow(popularity) and category of a restaurant. Also there are some statistical analysis to help predict customer flow(popularity) of a restaurant. And We also include some analysis of the review of a restaurant. This might help us to decide what a customer mostly looks for when choosing a restaurant.</p>
 </div>
-<div id="data" class="section level1">
-<h1>Data</h1>
+<div id="data" class="section level2">
+<h2>Data</h2>
 <p>The data used in this project is part of the Yelp Dataset Challenge. The dataset consists of a set of JSON files that include business information, reviews, tips, user information and check-ins. In this project, we have focused on business and reviews.</p>
 </div>
-<div id="stastistics-analysis" class="section level1">
-<h1>Stastistics analysis</h1>
+<div id="stastistics-analysis" class="section level2">
+<h2>Stastistics analysis</h2>
+</div>
 <div id="analysis-of-customer-flowpopularity-of-a-restaurantregression-model" class="section level2">
 <h2>Analysis of customer flow(popularity) of a restaurant(Regression model)</h2>
+<center>
 <p><img src="images/unnamed-chunk-8-1.jpg" style="width:75%"></p>
 </div>
 <div id="conclusion" class="section level2">
 <h2>Conclusion</h2>
 <p>After constructing the regression model, we find there is association between number of review and stars, category, location, price range and business hours of a restaurant. We can see from the plots above that the model fits well.</p>
-</div>
 </div>
 <div id="shiny" class="section level1">
 <h1>Shiny</h1>
@@ -237,63 +242,72 @@ $(document).ready(function () {
 <h2>Bubble plot</h2>
 <div id="the-distribution-of-ratings-across-different-categories" class="section level3">
 <h3>the distribution of ratings across different categories</h3>
+<center>
 <p><img src="images/bubble%20plot-1.jpg" style="width:75%"></p>
 </div>
 <div id="the-distribution-of-ratings-across-different-cities" class="section level3">
 <h3>the distribution of ratings across different cities</h3>
+<center>
 <p><img src="images/bubble%20plot2-1.jpg" style="width:75%"></p>
 </div>
-<div id="conclusion-1" class="section level3">
-<h3>Conclusion</h3>
-<p>We can see that most restaurants have main rating level are around 4.0 and 3.5. It seems that the mean rating levels among these categories and cities would be similar.</p>
 </div>
+<div id="conclusion-1" class="section level2">
+<h2>Conclusion</h2>
+<p>We can see that most restaurants have main rating level are around 4.0 and 3.5. It seems that the mean rating levels among these categories and cities would be similar.</p>
 </div>
 <div id="positivity-bar-chart" class="section level2">
 <h2>Positivity Bar chart</h2>
+<center>
 <p><img src="images/positive%20bar.jpg" style="width:75%"></p>
 </div>
 <div id="positivity-density" class="section level2">
 <h2>Positivity Density</h2>
+<center>
 <p><img src="images/Positivity%20Density-1.jpg" style="width:75%"></p>
-<div id="conclusion-2" class="section level3">
-<h3>Conclusion</h3>
-<p>This histogram of positivity scores shows that 1-star reviews have lower positivity compared to 4 or 5-star reviews.</p>
 </div>
+<div id="conclusion-2" class="section level2">
+<h2>Conclusion</h2>
+<p>This histogram of positivity scores shows that 1-star reviews have lower positivity compared to 4 or 5-star reviews.</p>
 </div>
 <div id="negativity-bar-chart" class="section level2">
 <h2>Negativity Bar Chart</h2>
+<center>
 <p><img src="images/negative%20bar.jpg" style="width:75%"></p>
 </div>
 <div id="negativity-density" class="section level2">
 <h2>Negativity Density</h2>
+<center>
 <p><img src="images/Negativity%20Density-1.jpg" style="width:75%"></p>
-<div id="conclusion-3" class="section level3">
-<h3>Conclusion</h3>
-<p>The histogram of negative reviews looks much different than the positive one. The chart is heavily skewed right. We can see that 5-star reviews aren’t completely positive all the time, though they have lower negativity than the 1 star reviews.</p>
 </div>
+<div id="conclusion-3" class="section level2">
+<h2>Conclusion</h2>
+<p>The histogram of negative reviews looks much different than the positive one. The chart is heavily skewed right. We can see that 5-star reviews aren’t completely positive all the time, though they have lower negativity than the 1 star reviews.</p>
 </div>
 <div id="word-cloud" class="section level2">
 <h2>Word cloud</h2>
 <div id="star-reviews" class="section level3">
 <h3>5-star reviews</h3>
+<center>
 <p><img src="images/wordcloud_output_of_positive_reviews.jpg" style="width:75%"></p>
 </div>
 <div id="star-reviews-1" class="section level3">
 <h3>1-star reviews</h3>
+<center>
 <p><img src="images/wordcloud_output_of_negative_reviews.jpg" style="width:75%"></p>
-<div id="conclusion-4" class="section level4">
-<h4>Conclusion</h4>
+</div>
+</div>
+<div id="conclusion-4" class="section level2">
+<h2>Conclusion</h2>
 <p>The 5-star reviews contain many instances like “love”, “amazing”, “delicious”, “friendly”. On the contrast, the 1-star reviews use very little positive language, and instead using words like “minutes”, “horrible”, ”worst”, “frozen”, presumably after long and unfortunate waits at the establishment, and the food were not good either.</p>
-</div>
-</div>
 </div>
 <div id="customized-ring-plot" class="section level2">
 <h2>Customized ring plot</h2>
+<center>
 <p><img src="images/donut%20charts-1.jpg" style="width:75%"></p>
-<div id="conclusion-5" class="section level3">
-<h3>Conclusion</h3>
-<p>From all the analysis above, we can conclude that Yelp reviews’ star ratings are significantly associated. Yelp reviews with 5-star are generally positive while Yelp reviews with 1-star are generally negative.</p>
 </div>
+<div id="conclusion-5" class="section level2">
+<h2>Conclusion</h2>
+<p>From all the analysis above, we can conclude that Yelp reviews’ star ratings are significantly associated. Yelp reviews with 5-star are generally positive while Yelp reviews with 1-star are generally negative.</p>
 </div>
 </div>
 <div id="results" class="section level1">
@@ -302,6 +316,7 @@ $(document).ready(function () {
 <div id="usefulness-of-the-results" class="section level2">
 <h2>Usefulness of the results</h2>
 <p>Words that are frequently mentioned in reviews on Yelp might reflect what people most care when going to a restaurant. This is of great imporance as it helps restaurants to put more efforts on certain aspects and improve their business.</p>
+<p><img src="images/Yelp_trademark_RGB_outline.png" style="width:25%" align="right" ></p>
 </div>
 </div>
 
