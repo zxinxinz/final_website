@@ -96,4 +96,6 @@ Through linear regression we find that the passenger flows shown by number of re
 ## Usefulness of the results
 Words that are frequently mentioned in reviews on Yelp might reflect what people most care when going to a restaurant. This is of great imporance as it helps restaurants to put more efforts on certain aspects and improve their business. 
 
- <img src="images/Yelp_trademark_RGB_outline.png" style="width:25%" align="right" >
+<img src="images/Yelp_trademark_RGB_outline.png" style="width:25%" > 
+
+<center> Copyright © 2017 final project 
