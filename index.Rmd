@@ -4,7 +4,7 @@ title: "Yelp data analysis"
 
 
 ### Screencast
-<center><iframe width="560" height="315" src="https://youtu.be/Q0MPK33uhII" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://youtu.be/Q0MPK33uhII" frameborder="0" allowfullscreen></iframe>
 
 ## Overview of the project scope
 Nowadays, most customers will search for restaurants on Yelp to decide where to eat for the next meal. The review and rating of a restaurant is of great importance and will help a customer to decide whether this is a good place to eat. Our goal is to find what property makes a restaurant popular and what drives a customer to choose a certain restaurant. Therefore, we choose to explore data of Yelp since it has reviews from customers all over the world.  
@@ -24,7 +24,7 @@ After constructing the regression model, we find there is association between nu
 
 
 #Shiny
-The interactivity between these factors can be reflected by [shiny]()
+The interactivity between these factors can be reflected by [shiny](https://yeyizhang.shinyapps.io/p8105_final_shiny2/)
 
 
 # Visualizations

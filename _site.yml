@@ -4,7 +4,7 @@ navbar:
   title: "Home"
   right: 
     - text: "Shiny"
-      href: https://github.com/never1andddd/p8105_final_project
+      href: https://yeyizhang.shinyapps.io/p8105_final_shiny2/
     - icon: fa-github fa-lg
       href: https://github.com/never1andddd/p8105_final_project
 
