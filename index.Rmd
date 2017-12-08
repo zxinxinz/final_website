@@ -27,7 +27,7 @@ After constructing the regression model, we find there is association between nu
 <img src="images/bubble plot-1.jpg" style="width:75%">
 
 ## Bubble plot showing the distribution of ratings across different cities
-<img src="images/bubble plot-2-1.jpg" style="width:75%">
+<img src="images/bubble plot2-1.jpg" style="width:75%">
 
 
 ### Conclusion
