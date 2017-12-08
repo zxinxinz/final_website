@@ -1,11 +1,14 @@
-name: "Yay internet!"
+name: "Yelp Data Analysi"
 output_dir: "."
 navbar:
   title: "Home"
-  right:
+  right: 
     - text: "Shiny"
-      href: 
+      href: https://github.com/never1andddd/p8105_final_project
     - icon: fa-github fa-lg
       href: https://github.com/never1andddd/p8105_final_project
 output:
-  html_document
+  html_document:
+  theme: readable
+  css: style.css
+  
