@@ -32,6 +32,7 @@ After constructing the regression model, we find there is association between nu
 
 ### Conclusion
 We can see that most restaurants have main rating level are around 4.0 and 3.5. It seems that the mean rating levels among these categories and cities would be similar.
+
 ## Positivity Bar chart
 <img src="images/positive bar.jpg" style="width:75%">
 
