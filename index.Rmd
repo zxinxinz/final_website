@@ -49,6 +49,8 @@ This histogram of positivity scores shows that 1-star reviews have lower positiv
 <img src="images/Negativity Density-1.jpg" style="width:75%">
 
 
+
+
 ### Conclusion
 The histogram of negative reviews looks much different than the positive one. The chart is heavily skewed right. We can see that 5-star reviews aren’t completely positive all the time, though they have lower negativity than the 1 star reviews.
 
