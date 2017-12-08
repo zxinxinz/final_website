@@ -18,6 +18,7 @@ The data used in this project is part of the Yelp Dataset Challenge. The dataset
 ## Analysis of customer flow(popularity) of a restaurant(Regression model)
 <img src="images/unnamed-chunk-8-1.jpg" style="width:75%">
 
+
 ## Conclusion
 After constructing the regression model, we find there is association between number of review and stars, category, location, price range and business hours of a restaurant. We can see from the plots above that the model fits well.
 
@@ -28,6 +29,7 @@ After constructing the regression model, we find there is association between nu
 ## Bubble plot showing the distribution of ratings across different cities
 <img src="images/bubble plot-2.jpg" style="width:75%">
 
+
 ### Conclusion
 We can see that most restaurants have main rating level are around 4.0 and 3.5. It seems that the mean rating levels among these categories and cities would be similar.
 ## Positivity Bar chart
@@ -35,6 +37,7 @@ We can see that most restaurants have main rating level are around 4.0 and 3.5. 
 
 ## Positivity Density
 <img src="images/Positivity Density-1.jpg" style="width:75%">
+
 
 ### Conclusion
 This histogram of positivity scores shows that 1-star reviews have lower positivity compared to 4 or 5-star reviews. 
@@ -44,6 +47,7 @@ This histogram of positivity scores shows that 1-star reviews have lower positiv
 
 ## Negativity Density
 <img src="images/Negativity Density-1.jpg" style="width:75%">
+
 
 ### Conclusion
 The histogram of negative reviews looks much different than the positive one. The chart is heavily skewed right. We can see that 5-star reviews aren’t completely positive all the time, though they have lower negativity than the 1 star reviews.
@@ -55,11 +59,13 @@ The histogram of negative reviews looks much different than the positive one. Th
 ### 1-star reviews
 <img src="images/wordcloud_output_of_negative_reviews.jpg" style="width:75%">
 
+
 #### Conclusion
 The 5-star reviews contain many instances like “love”, “amazing”, “delicious”, “friendly”. On the contrast, the 1-star reviews use very little positive language, and instead using words like “minutes”, “horrible”, ”worst”, “frozen”, presumably after long and unfortunate waits at the establishment, and the food were not good either. 
 
 ## Customized ring plot 
-#<img src="images/donut chart-1.jpg" style="width:75%">
+<img src="images/donut chart-1.jpg" style="width:75%">
+
 
 ### Conclusion
 From all the analysis above, we can conclude that Yelp reviews’ star ratings are significantly associated. Yelp reviews with 5-star are generally positive while Yelp reviews with 1-star are generally negative. 
